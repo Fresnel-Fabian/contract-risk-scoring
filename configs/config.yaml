@@ -1,0 +1,46 @@
+seed: 42
+
+paths:
+  raw_data:       data/raw/
+  processed_data: data/processed/
+  external_data:  data/external/
+  models:         models/
+  reports:        reports/
+  logs:           logs/
+
+data:
+  cuad_version: "1.0"
+  edgar_filing_types: ["EX-10", "EX-10.1", "EX-10.2"]
+  edgar_years: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  max_contracts_edgar: 50000
+  train_split: 0.70
+  val_split:   0.15
+  test_split:  0.15
+  stratify_by: "contract_type"
+
+clause_model:
+  base_model: "nlpaueb/legal-bert-base-uncased"
+  max_seq_length: 512
+  num_clause_types: 41
+  batch_size: 16
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  epochs: 5
+  warmup_ratio: 0.1
+  fp16: true
+
+risk_model:
+  architecture: "attention"
+  hidden_dim: 256
+  num_heads: 8
+  dropout: 0.1
+  batch_size: 32
+  learning_rate: 1.0e-4
+  epochs: 20
+
+evaluation:
+  clause_metrics: ["f1_micro", "f1_macro", "precision", "recall"]
+  risk_metrics:   ["auroc", "auprc", "f1_at_threshold"]
+  risk_threshold: 0.5
+  auto_clear_threshold: 30
+  high_risk_threshold: 70
