@@ -1,0 +1,37 @@
+# Core ML
+torch>=2.1.0
+transformers>=4.37.0
+datasets>=2.17.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+pandas>=2.2.0
+
+# NLP + Legal
+spacy>=3.7.0
+tokenizers>=0.15.0
+
+# Explainability
+shap>=0.44.0
+captum>=0.7.0
+
+# PDF processing
+pdfplumber>=0.10.0
+pypdf>=4.0.0
+
+# Experiment tracking
+mlflow>=2.10.0
+
+# Evaluation + plotting
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+
+# API + serving
+fastapi>=0.109.0
+uvicorn>=0.27.0
+
+# Dev tooling
+pytest>=7.4.0
+ruff>=0.2.0
+jupyter>=1.0.0
+ipykernel>=6.29.0
