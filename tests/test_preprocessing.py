@@ -1,5 +1,4 @@
 """Unit tests for preprocessing pipeline."""
-import pytest
 from src.data.preprocess import stratified_split
 
 
