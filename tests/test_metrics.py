@@ -1,6 +1,5 @@
 """Unit tests for metric utilities."""
 import numpy as np
-import pytest
 from src.utils.metrics import risk_score_to_label, precision_at_k, attorney_hours_saved
 
 

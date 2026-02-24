@@ -6,6 +6,6 @@ from src.data.ingest import load_config
 
 if __name__ == "__main__":
     cfg = load_config()
-    print(f"[download_legalbert] Starting download...")
+    print("[download_legalbert] Starting download...")
     # TODO: Implement download logic
-    print(f"[download_legalbert] Done.")
+    print("[download_legalbert] Done.")
