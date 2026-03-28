@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-source:   'Source Serif 4', Georgia, serif;
+  --font-ibm:      'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #050C1A;
+  color: #F5EDD6;
+  font-family: var(--font-source);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Noise texture overlay ───────────────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ── Typography ─────────────────────────────────────────────────────────── */
+.font-display { font-family: var(--font-playfair); }
+.font-body    { font-family: var(--font-source); }
+.font-mono    { font-family: var(--font-ibm); }
+
+/* ── Amber gradient text ─────────────────────────────────────────────────── */
+.text-amber-gradient {
+  background: linear-gradient(135deg, #E8AD50 0%, #C9933A 50%, #F5C96A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Shimmer text ────────────────────────────────────────────────────────── */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C9933A 0%, #F5C96A 25%, #E8AD50 50%, #F5C96A 75%, #C9933A 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% center; }
+  to   { background-position: -200% center; }
+}
+
+/* ── Glassmorphism panels ────────────────────────────────────────────────── */
+.glass {
+  background: rgba(15, 30, 53, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 147, 58, 0.12);
+}
+
+.glass-hover {
+  transition: all 0.25s ease;
+}
+.glass-hover:hover {
+  background: rgba(22, 36, 64, 0.8);
+  border-color: rgba(201, 147, 58, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ── Dividers ────────────────────────────────────────────────────────────── */
+.divider-amber {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9933A44, transparent);
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0A1628; }
+::-webkit-scrollbar-thumb { background: #2A4060; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #C9933A; }
+
+/* ── Risk score ring animation ───────────────────────────────────────────── */
+.gauge-ring {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── Triage badges ───────────────────────────────────────────────────────── */
+.badge-urgent {
+  background: rgba(192, 57, 43, 0.15);
+  border: 1px solid rgba(192, 57, 43, 0.5);
+  color: #E74C3C;
+}
+.badge-flag {
+  background: rgba(184, 115, 50, 0.15);
+  border: 1px solid rgba(184, 115, 50, 0.5);
+  color: #E8943A;
+}
+.badge-clear {
+  background: rgba(30, 107, 64, 0.15);
+  border: 1px solid rgba(30, 107, 64, 0.5);
+  color: #2ECC71;
+}
+
+/* ── Clause probability bar ──────────────────────────────────────────────── */
+.prob-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: #2A4060;
+  overflow: hidden;
+}
+.prob-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* ── Upload drop zone ────────────────────────────────────────────────────── */
+.drop-zone {
+  border: 1.5px dashed rgba(201, 147, 58, 0.3);
+  transition: all 0.25s ease;
+}
+.drop-zone:hover,
+.drop-zone.dragging {
+  border-color: rgba(201, 147, 58, 0.7);
+  background: rgba(201, 147, 58, 0.04);
+}
+
+/* ── Fade-up animation util ──────────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Stagger delays ──────────────────────────────────────────────────────── */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+
+/* ── Button ──────────────────────────────────────────────────────────────── */
+.btn-amber {
+  background: linear-gradient(135deg, #C9933A, #B8832A);
+  color: #050C1A;
+  font-family: var(--font-ibm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 24px rgba(201, 147, 58, 0.2);
+}
+.btn-amber:hover {
+  background: linear-gradient(135deg, #E8AD50, #C9933A);
+  box-shadow: 0 6px 32px rgba(201, 147, 58, 0.35);
+  transform: translateY(-1px);
+}
+.btn-amber:active { transform: translateY(0); }
+
+/* ── Scan line effect ────────────────────────────────────────────────────── */
+@keyframes scanLine {
+  0%   { transform: translateY(-100%); opacity: 0.6; }
+  100% { transform: translateY(400%);  opacity: 0; }
+}
+.scan-line {
+  position: absolute;
+  inset-x: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C9933A66, transparent);
+  animation: scanLine 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Amber dot pulse ─────────────────────────────────────────────────────── */
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.6; }
+}
+.dot-pulse { animation: dotPulse 1.5s ease-in-out infinite; }
