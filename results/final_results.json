@@ -1,0 +1,299 @@
+{
+  "model": "bert-base-uncased",
+  "epochs": 4,
+  "effective_batch": 32,
+  "learning_rate": 3e-05,
+  "aupr": 0.0741,
+  "prec_at_80": 0.0,
+  "prec_at_90": 0.0,
+  "mean_clause_aupr": 0.0582,
+  "per_clause": [
+    {
+      "clause": "Parties",
+      "aupr": 0.651750267002475,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 102
+    },
+    {
+      "clause": "No-Solicit Of Employees",
+      "aupr": 0.49249656002751985,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 10
+    },
+    {
+      "clause": "Renewal Term",
+      "aupr": 0.25221458768331684,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 26
+    },
+    {
+      "clause": "Notice Period To Terminate Renewal",
+      "aupr": 0.24750651362042855,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 16
+    },
+    {
+      "clause": "Governing Law",
+      "aupr": 0.17372121802531557,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 83
+    },
+    {
+      "clause": "Expiration Date",
+      "aupr": 0.1597009804691477,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 78
+    },
+    {
+      "clause": "No-Solicit Of Customers",
+      "aupr": 0.09393939393939395,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 7
+    },
+    {
+      "clause": "Anti-Assignment",
+      "aupr": 0.09025894033673046,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 72
+    },
+    {
+      "clause": "Termination For Convenience",
+      "aupr": 0.05772357723577236,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 29
+    },
+    {
+      "clause": "Exclusivity",
+      "aupr": 0.0518925518925519,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 33
+    },
+    {
+      "clause": "Cap On Liability",
+      "aupr": 0.033030788717675424,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 44
+    },
+    {
+      "clause": "Uncapped Liability",
+      "aupr": 0.03125,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 13
+    },
+    {
+      "clause": "Third Party Beneficiary",
+      "aupr": 0.025974025974025972,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 6
+    },
+    {
+      "clause": "Document Name",
+      "aupr": 0.008883463017571806,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 102
+    },
+    {
+      "clause": "Effective Date",
+      "aupr": 0.008644105199668243,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 70
+    },
+    {
+      "clause": "Insurance",
+      "aupr": 0.007512927517857877,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 37
+    },
+    {
+      "clause": "Audit Rights",
+      "aupr": 0.00047619047619047624,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 38
+    },
+    {
+      "clause": "Agreement Date",
+      "aupr": 0.00017902880807843183,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 93
+    },
+    {
+      "clause": "Affiliate License-Licensee",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 12
+    },
+    {
+      "clause": "Affiliate License-Licensor",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 6
+    },
+    {
+      "clause": "Change Of Control",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 26
+    },
+    {
+      "clause": "Competitive Restriction Exception",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 16
+    },
+    {
+      "clause": "Covenant Not To Sue",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 24
+    },
+    {
+      "clause": "Ip Ownership Assignment",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 23
+    },
+    {
+      "clause": "Irrevocable Or Perpetual License",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 13
+    },
+    {
+      "clause": "Joint Ip Ownership",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 7
+    },
+    {
+      "clause": "License Grant",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 50
+    },
+    {
+      "clause": "Liquidated Damages",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 14
+    },
+    {
+      "clause": "Minimum Commitment",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 32
+    },
+    {
+      "clause": "Most Favored Nation",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 3
+    },
+    {
+      "clause": "Non-Compete",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 23
+    },
+    {
+      "clause": "Non-Disparagement",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 7
+    },
+    {
+      "clause": "Non-Transferable License",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 22
+    },
+    {
+      "clause": "Post-Termination Services",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 29
+    },
+    {
+      "clause": "Price Restrictions",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 0
+    },
+    {
+      "clause": "Revenue/Profit Sharing",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 35
+    },
+    {
+      "clause": "Rofr/Rofo/Rofn",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 17
+    },
+    {
+      "clause": "Source Code Escrow",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 1
+    },
+    {
+      "clause": "Unlimited/All-You-Can-Eat-License",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 3
+    },
+    {
+      "clause": "Volume Restriction",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 17
+    },
+    {
+      "clause": "Warranty Duration",
+      "aupr": 0.0,
+      "p80": 0.0,
+      "p90": 0.0,
+      "n_pos": 10
+    }
+  ]
+}
