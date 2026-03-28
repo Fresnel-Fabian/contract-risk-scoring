@@ -1,0 +1,49 @@
+name: contract-risk
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # ── Python ────────────────────────────────────────────────────────────────
+  - python=3.12
+
+  # ── Core ML (conda for CUDA-aware torch) ─────────────────────────────────
+  - pytorch>=2.0.0
+  - pytorch-cuda=11.8      # remove this line if using CPU only / Apple Silicon
+  - torchvision            # needed by some transformers examples
+
+  # ── pip-managed (pinned versions critical for Colab compat) ──────────────
+  - pip
+  - pip:
+    # HuggingFace — pin these exactly; see README for why
+    - transformers==4.46.3
+    - datasets==2.21.0
+    - accelerate>=0.27.0
+    - tokenizers>=0.15.0
+
+    # Classical models
+    - scikit-learn>=1.4.0
+    - numpy>=1.24.0
+    - pandas>=2.0.0
+    - scipy>=1.11.0
+
+    # Notebooks
+    - jupyter>=1.0.0
+    - ipywidgets>=8.0.0
+    - matplotlib>=3.8.0
+    - seaborn>=0.13.0
+    - tqdm>=4.66.0
+
+    # Backend (FastAPI)
+    - fastapi==0.111.0
+    - uvicorn[standard]==0.29.0
+    - pydantic==2.7.1
+    - python-multipart==0.0.9
+    - python-dotenv>=1.0.0
+    - httpx==0.27.0
+
+    # Testing
+    - pytest==8.2.0
+    - pytest-asyncio==0.23.6
